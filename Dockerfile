@@ -10,6 +10,8 @@ apt-get install -y --no-install-recommends \
     mesa-utils \
     unzip \
     libdrm-dev \
+    libvulkan-dev \
+    libxcb-icccm4-dev \
     libgbm-dev \
     libglm-dev \
     libassimp-dev \
