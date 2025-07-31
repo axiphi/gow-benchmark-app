@@ -4,7 +4,31 @@ RUN <<'EOF'
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
-apt-get install -y --no-install-recommends sudo vulkan-tools mesa-utils unzip libgbm-dev libglm-dev libassimp-dev libwayland-dev wayland-protocols
+apt-get install -y --no-install-recommends \
+    sudo \
+    vulkan-tools \
+    mesa-utils \
+    unzip \
+    libdrm-dev \
+    libgbm-dev \
+    libglm-dev \
+    libassimp-dev \
+    libwayland-dev \
+    wayland-protocols \
+    build-essential \
+    autoconf \
+    meson \
+    xorg-dev \
+    libsdl1.2-dev \
+    libsdl-gfx1.2-dev \
+    libsdl-net1.2-dev \
+    libsdl-image1.2-dev \
+    libsdl-ttf2.0-dev \
+    libsdl-mixer1.2-dev \
+    libsdl2-image-dev \
+    libsdl2-mixer-dev \
+    libsdl2-ttf-dev \
+    apt-file
 
 wget -O /tmp/phoronix.deb https://github.com/phoronix-test-suite/phoronix-test-suite/releases/download/v10.8.4/phoronix-test-suite_10.8.4_all.deb
 dpkg -i /tmp/phoronix.deb
