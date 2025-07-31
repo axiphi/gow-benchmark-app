@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--Phoronix Test Suite v10.8.4-->
+<PhoronixTestSuite>
+    <SuiteInformation>
+        <Title>wolf-graphics</Title>
+        <Version>1.0.0</Version>
+        <TestType>Graphics</TestType>
+        <Description>Graphics Benchmark for Wolf</Description>
+        <Maintainer>Philipp Kleber</Maintainer>
+    </SuiteInformation>
+    <Execute>
+        <Test>pts/vkmark-1.3.2</Test>
+        <Arguments>--size 1920x1080 -p mailbox</Arguments>
+        <Description>Resolution: 1920 x 1080 - Present Mode: Mailbox</Description>
+    </Execute>
+    <Execute>
+        <Test>pts/openarena-1.5.5</Test>
+        <Arguments>+set r_customWidth 1920 +set r_customHeight 1080</Arguments>
+        <Description>Resolution: 1920 x 1080</Description>
+    </Execute>
+    <Execute>
+        <Test>pts/unigine-heaven-1.6.6</Test>
+        <Arguments>-video_width 1920 -video_height 1080 -video_fullscreen 1 -video_app opengl</Arguments>
+        <Description>Resolution: 1920 x 1080 - Mode: Fullscreen - Renderer: OpenGL</Description>
+    </Execute>
+    <Execute>
+        <Test>pts/xonotic-1.7.0</Test>
+        <Arguments>+vid_width 1920 +vid_height 1080 +exec effects-ultimate.cfg</Arguments>
+        <Description>Resolution: 1920 x 1080 - Effects Quality: Ultimate</Description>
+    </Execute>
+</PhoronixTestSuite>
