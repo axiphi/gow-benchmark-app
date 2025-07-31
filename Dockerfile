@@ -27,4 +27,6 @@ source /opt/gow/launch-comp.sh
 launcher /usr/bin/kitty
 EOF
 
+ENV XDG_RUNTIME_DIR=/tmp/.X11-unix
+
 LABEL org.opencontainers.image.source=https://github.com/axiphi/gow-benchmark-app
