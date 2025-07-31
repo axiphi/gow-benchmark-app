@@ -1,0 +1,23 @@
+[[apps]]
+title = "Benchmark"
+icon_png_path = "https://raw.githubusercontent.com/axiphi/gow-benchmark-app/main/assets/icon.png"
+
+[apps.runner]
+type = "docker"
+name = "WolfBenchmark"
+image = "ghcr.io/axiphi/gow-benchmark:latest"
+mounts = []
+env = ["RUN_SWAY=1", "GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/* /dev/nvidia*"]
+devices = []
+ports = []
+base_create_json = """
+{
+  "HostConfig": {
+    "IpcMode": "host",
+    "Privileged": false,
+    "CapAdd": ["NET_RAW", "MKNOD", "NET_ADMIN"],
+    "DeviceCgroupRules": ["c 13:* rmw", "c 244:* rmw"]
+  }
+}
+\
+"""
