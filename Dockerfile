@@ -15,9 +15,10 @@ apt-get autoremove -y
 rm -rf /var/lib/apt/lists/*
 EOF
 
-COPY --chmod=777 wolf-graphics-suite.xml /home/retro/.phoronix-test-suite/test-suites/local/wolf-graphics/suite-definition.xml
+COPY --chmod=777 wolf-graphics-suite.xml /opt/gow/suite-definition.xml
 
 COPY --chmod=777 make-sudoer.sh /etc/cont-init.d/20-make-sudoer.sh
+COPY --chmod=777 setup-phoronix.sh /etc/cont-init.d/30-setup-phoronix.sh
 
 COPY --chmod=0777 --chown=0:0 sway.config /cfg/sway/config
 
