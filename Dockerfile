@@ -15,8 +15,7 @@ apt-get autoremove -y
 rm -rf /var/lib/apt/lists/*
 EOF
 
-RUN usermod -a -G sudo retro \
-    && echo 'retro:retro' | chpasswd
+COPY --chmod=777 make-sudoer.sh /etc/cont-init.d/20-make-sudoer.sh
 
 COPY --chmod=0777 --chown=0:0 sway.config /cfg/sway/config
 
